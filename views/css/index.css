@@ -1,0 +1,149 @@
+body{
+    margin: 0;
+    padding: 0;
+    background:  url('../data/bg1.png') center left/contain no-repeat #f44336;  
+    color:white;
+    display: flex;
+    z-index : -1;
+    outline : none;
+}
+
+pre{
+    display: inline;
+    font-size: 1.3vw;
+}
+#Forms1{
+    z-index : 1;
+    background-color: rgba(0,0,0,0.6);
+    color:white;
+    border:1px solid black;
+    box-shadow : 0 4px 5px black;
+    border-radius: 25px;
+    margin-top:7%;
+    width:30%;
+    display: flex;
+    height:70%;
+    justify-content: center;
+    align-items: center;
+    position: absolute;
+    right: 2%;
+    min-width: 30%;
+    max-width: 40%;
+    max-height : 70%;
+    min-height: 50%;
+}
+
+#rform1{
+    padding:5%;
+    width: 100%;
+    display: block;
+    overflow: hidden;
+    transition: width 2s;
+}
+
+#lform1{
+    padding: 5%;
+    overflow:hidden;
+    display: none;
+    width:0;
+}
+
+
+.classField{
+    display: block;
+    text-align: center;
+}
+input{
+    width: 80%;
+    padding: 1.5%;
+    margin:1%;
+    font-size: 1vw;
+    border:1px solid black;
+    
+
+}
+
+input[type="checkbox"]{
+    width:fit-content;
+    text-align: left;
+}
+
+input[type="submit"]{
+    width: fit-content;
+    outline: none;
+}
+
+#text{
+    font-size: 2.5vw;
+    margin:4%;
+}
+
+
+.showPass{
+    margin-left: 10%;
+}
+
+.mid{
+    margin-left: 10%;
+}
+
+button{
+    font-weight: 600;
+    cursor: pointer;
+}
+
+.register-login{
+    background-color: black;
+    color: white;
+    margin: 4% 15%;
+    border-radius: 25px;
+    cursor: not-allowed;
+    padding:2% 5%;
+    margin-top:7%;
+    opacity: 0.5;
+}
+
+.alert {
+    background-color: #f44336;
+    color: white;
+    width:80%;
+    position:relative;
+    left:-2px;
+    margin:auto;
+    box-sizing: border-box;
+    font-size:20px;
+    padding: 0 15px;
+}
+  
+  .closebtn {
+    color: white;
+    font-weight: bold;
+    float: right;
+    cursor: pointer;
+    transition: 0.3s;
+    font-size:20px;
+  }
+  
+  .closebtn:hover {
+    color: black;
+  }
+
+  #r1,#r2,#r3,#l1,#l2{
+      visibility: hidden;
+  }
+
+  #Success{
+    background-color: #055a05;
+    color: white;
+    width:80%;
+    position:relative;
+    left:-2px;
+    margin:auto;
+    box-sizing: border-box;
+    font-size:20px;
+    padding: 0 15px;
+  }
+
+form{
+    margin-top:3%;
+}

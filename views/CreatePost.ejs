@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    
+    
+    <link rel="stylesheet" href="../css/navBar.css">
+    <link rel="stylesheet" href="../css/createPost.css">
+    <script src="https://www.gstatic.com/firebasejs/4.3.0/firebase.js"></script>
+    <script src="https://kit.fontawesome.com/5e32ecff60.js" crossorigin="anonymous"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script>
+                var firebaseConfig = {
+                apiKey: "AIzaSyCssH9w6zBs0B7QNqU1yNGw_zbMB6sX86Y",
+                authDomain: "aditya-42926.firebaseapp.com",
+                databaseURL: "https://aditya-42926.firebaseio.com",
+                projectId: "aditya-42926",
+                storageBucket: "aditya-42926.appspot.com",
+                messagingSenderId: "54728538252",
+                appId: "1:54728538252:web:a1dc7c1b61a7c237dda3a9",
+                measurementId: "G-SDK8NNRRDK"
+            };
+            // Initialize Firebase
+            firebase.initializeApp(firebaseConfig);
+
+            var storage = firebase.storage();
+    var storageRef = storage.ref();
+    </script>
+    
+    <title>Create your post</title>
+</head>
+<body id="body">
+    <div id="loading" ><h3 data-text="It's loading…">It's loading…</h3></div>
+    <%- include('navBar.ejs') %>
+    <div id="error1"  ></div>
+    
+    <div id="formpart">
+        <form method = "POST" action= "/profile" id="form1">
+            <textarea  name="PostCaption" id="texqwerty"></textarea>
+            <input type="file" name="img" id="img" value = "Click Me">
+            
+            <input type="submit" value="SUBMIT" id="stopthis">
+        </form>
+    </div>
+    
+</body>
+
+<script>
+    var loading = document.getElementById("loading");
+
+var file;
+var x = document.getElementById('img');
+x.addEventListener('change',function(e){
+    file = e.target.files[0];
+    console.log(file);
+});
+</script>
+
+
+
+
+<script>
+    var create = document.getElementById('linkNav1');
+    create.className = "linkNav active";
+
+    
+
+$('#form1').submit(function(e){
+    e.preventDefault();
+    loading.style.display = "block";
+    var url = '/users/'+'<%=name%>'+ '/' + '<%=postc%>'+'.jpg';
+    var store = firebase.storage().ref(url);
+    store.put(file).then((result) => {
+        loading.style.display = "none";
+        $(this).unbind('submit').submit();
+    }).catch((err) => {
+        loading.style.display = "none";
+        console.log("bhai, kuch ot skfdv");
+        var q = document.getElementById('error1');
+        q.innerText = "Any error occured";
+    });
+
+});
+</script>
+
+
+<script src="../clientjs/navBar.js"></script>
+
+</html>

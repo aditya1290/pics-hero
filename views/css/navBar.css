@@ -1,0 +1,174 @@
+#navBarMain{
+    z-index : 5;
+    margin : 0 10%;
+    display : flex;
+    flex-direction: row;
+    justify-content: space-around;
+    background-color: rgb(177,168,240);
+    position: sticky;
+    box-shadow : 0 8px 16px 0 rgba(50,50,50,0.9);
+    top : 0;
+    padding : 6px 0;
+    border : 1px solid rgb(8, 10, 37);
+    border-top: 0;
+    transition : top 0.5s;
+}
+
+.mainNav{
+    width: 30%;
+    margin-left: 10%;
+}
+
+.mainNav ul{
+    display : flex;
+    margin: 0;
+    margin-block-start: 0;
+    margin-block-end: 0;
+    height: max-content;
+    padding: 0;
+    list-style-type: none;
+}
+.mainNav ul li{
+    
+    list-style-type: none;
+}
+.mainNav ul li a{
+    color : black;
+    display: block;
+    padding: 0.5vw 2vw;
+    text-decoration: none;
+    margin : 2px 5px;
+    border-radius: 9px;
+    transition : background-color 0.3s;
+    border:1px solid rgba(22, 13, 77,0.8);
+}
+.mainNav ul li a:hover{
+    background-color: rgba(22, 13, 77,0.8);
+    color : white;
+}
+
+.mainNav ul li a.active{
+    background-color: rgba(22, 13, 77,0.8);
+    color : white;
+}
+/* --------------------------------------------------------------------------------------------------------- */
+
+
+
+
+#navBarSearch{
+    width : 25%;
+    margin: auto;
+    padding-left: 3%;
+}
+#navBarSearch input{
+    padding : 8px;
+    font-size: 13px;
+    border: 1px solid black;
+    outline : none;
+    width : 90%;
+}
+
+#navBarSearch input:focus{
+    box-shadow : 0 0 9px  rgba(2, 6, 26, 0.9);
+}
+
+#navBarSearch button{
+    font-size: 16px;
+    padding : 6px;
+    color : white;
+    background-color: rgba(50,50,50,0.9);
+    border : 1px solid black;
+}
+
+
+#navEnd{
+    width : 38px;
+    height :38px;
+    display: flex;
+    margin : auto;
+    align-items: center;
+}
+#navEnd img{
+    height: 100%;
+    width: 100%;
+    object-fit: cover;
+    border-radius: 50%;
+    border: 0px;
+    
+}
+
+#navEnd i{
+    margin-left : 7%;
+    padding : 77% 47%;
+    cursor : pointer;
+}
+
+#navEnd img:hover{
+    box-shadow : 0 0 6px  rgba(1, 14, 85, 0.9);
+}
+
+
+/* Dropdown */
+.dropdown-content {
+display: none;
+position: absolute;
+background-color: #f9f9f9;
+width : 8%;
+border : 1px solid black;
+box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+z-index: 1;
+background-color: rgb(177,168,240);
+right : -1px
+
+}
+  
+.dropdown-content a {
+  float: none;
+  color: black;
+  padding: 12px 16px;
+  text-decoration: none;
+  display: block;
+  text-align: left;
+}
+  
+.dropdown-content a:hover {
+    background-color: #ddd;
+}
+  
+.dropdown:hover .dropdown-content {
+    display: block;
+}
+
+/* //Search Query CSS */
+.autocomplete {
+    position: relative;
+    display: inline-block;
+  }
+
+  .autocomplete-items {
+    position: absolute;
+    border: 1px solid #d4d4d4;
+    border-bottom: none;
+    border-top: none;
+    z-index: 5;
+    /*position the autocomplete items to be the same width as the container:*/
+    top: 100%;
+    left: 0;
+    right: 0;
+  }
+  .autocomplete-items div {
+    padding: 10px;
+    cursor: pointer;
+    background-color: #fff;
+    border-bottom: 1px solid #d4d4d4;
+  }
+  .autocomplete-items div:hover {
+    /*when hovering an item:*/
+    background-color: #8a5fff;
+  }
+
+  a{
+      text-decoration: none;
+      color : black
+  }

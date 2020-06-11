@@ -1,0 +1,61 @@
+<div class="mainBody">
+    <div class="authorNameShow">
+        <a href="/profile/<%=postContent[i].authorName%>"><img src="../data/avatar.png" id="mypimg-<%=postContent[i]._id%>" ></a>
+        <a href="/profile/<%=postContent[i].authorName%>"><span><%= postContent[i].authorName %></span></a>
+    </div>
+    <div class="img">
+        <img  alt="" srcset="" id="myimg-<%=postContent[i]._id%>" onclick = "bigImage(this)" >
+    </div>
+    
+    <div class="PostContentShow"><%= postContent[i].caption %></div>
+    <hr>
+    <div class="likesOption">
+        <ul class="likesList">
+            <li class = "likesOptionItems like">
+                <% if(!postContent[i].likesUserId.includes(name) ){ %>
+                <i class="far fa-heart fa-lg" onclick="likethis(this)"></i>
+                <% }else{ %>
+                <i class="fas fa-heart fa-lg already-liked" onclick="likethis(this)"></i>
+                <% } %>
+                <p class="hideId"><%=postContent[i]._id%></p>
+                <%= postContent[i].likesCount %>
+            </li>
+            <li class = "likesOptionItems" >
+                <i class="fa fa-share-alt" aria-hidden="true" onclick = "funcShare(this)"></i>
+                <p class="hideId"><%=postContent[i]._id%></p>
+                <div id="tooltiptext">Copied to clipboard</div>
+            </li>
+            <li class = "likesOptionItems end">
+                <%if(!activeUser.bookmarkList.includes(postContent[i]._id)){%>
+                    <i class="far fa-bookmark fa-lg" onclick="bookmarkthis(this)" ></i>
+                <%}else{%>
+                <i class="fas fa-bookmark fa-lg" onclick="bookmarkthis(this)" ></i>
+                <%}%>
+                <p class="hideId"><%=postContent[i]._id%></p>
+            </li>
+        </ul>
+    </div>
+</div>
+<script>
+    var url = '<%=postContent[i].postimg%>';
+    var stargeRef = storageRef.child(url);
+    stargeRef.getDownloadURL().then(function(url) 
+    {
+        var img = document.getElementById('myimg-<%=postContent[i]._id%>');
+        img.src = url;
+        }).catch(function(error) {
+        console.log("error toh koi");   
+    });
+
+    var url1 = '/users/<%=postContent[i].authorName%>/0.jpg'
+    
+    storageRef.child(url1).getDownloadURL().then(function(url) 
+    {
+        var pimg1 = document.getElementById('mypimg-<%=postContent[i]._id%>')
+        pimg1.src = url;
+    }).catch(function(error) {
+        console.log(error);   
+    });
+    
+    
+</script>
